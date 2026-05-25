@@ -469,11 +469,8 @@ class Exponate:
 
     def check_crit(self, danger_list):
         global now_wet
-        # message = 'Влажность экспоната "{0}" в пределах нормы.'.format(self.name_exp)
         if now_wet > self.max_wet:
             danger_list.append(self.name_exp)
-        #     message = 'Влажность экспоната "{0}" превысила норму! Нужно уведомить куратора'.format(self.name_exp)
-        # print(message)
 
 
 class MaterialExponate(Exponate):
@@ -490,15 +487,6 @@ class MaterialExponate(Exponate):
 
     def __str__(self):
         return f'[ID: {self._id}] Материальный экспонат "{self.name_exp}" из материала {self.material} имеет максимальную допустимую влажность {self.max_wet}%'
-
-    # def check_crit(self, danger_list):
-    #     global now_wet
-    #     message = 'Материальный экспонат "{0}" в норме.'.format(self.name_exp)
-    #     if now_wet > self.max_wet:
-    #         danger_list.append(self.name_exp)
-    #         message = 'Влажность материального экспоната "{0}" превысила норму! Необходимо вмешательство'.format(
-    #             self.name_exp)
-    #     print(message)
 
     def input_info(self):
         try:
@@ -523,15 +511,6 @@ class ArtExponate(Exponate):
     def __str__(self):
         return f'[ID: {self._id}] Экспонат искусства "{self.name_exp}" с изображением "{self.art_object}" имеет максимальную допустимую влажность {self.max_wet}%'
 
-    # def check_crit(self, danger_list):
-    #     global now_wet
-    #     message = 'Экспонат искусства "{0}" в норме.'.format(self.name_exp)
-    #     if now_wet > self.max_wet:
-    #         danger_list.append(self.name_exp)
-    #         message = 'Влажность экспоната искусства "{0}" превысила норму! Нужно вмешательство реставратора!'.format(
-    #             self.name_exp)
-    #     print(message)
-
     def input_info(self):
         try:
             self.art_object = input('Введите то, что изображено на экспонате: ')
@@ -555,15 +534,6 @@ class WrittenExponate(Exponate):
     def __str__(self):
         return f'[ID: {self._id}] Рукописный экспонат "{self.name_exp}" на языке {self.language} имеет максимальную допустимую влажность {self.max_wet}%'
 
-    # def check_crit(self, danger_list):
-    #     global now_wet
-    #     message = 'Влажность рукописного экспоната "{0}" в пределах нормы.'.format(self.name_exp)
-    #     if now_wet > self.max_wet:
-    #         danger_list.append(self.name_exp)
-    #         message = 'Влажность рукописного экспоната "{0}" превысила норму! Нужно уведомить куратора'.format(
-    #             self.name_exp)
-    #     print(message)
-
     def input_info(self):
         try:
             self.language = input('Введите язык, на котором написан экспонат: ')
@@ -586,15 +556,6 @@ class PaleontologyExponate(Exponate):
 
     def __str__(self):
         return f'[ID: {self._id}] Палеонтологический экспонат "{self.name_exp}" с возрастом {self.age} лет имеет максимальную допустимую влажность {self.max_wet}%'
-
-    # def check_crit(self, danger_list):
-    #     global now_wet
-    #     message = 'Влажность палеонтологического экспоната "{0}" в норме.'.format(self.name_exp)
-    #     if now_wet > self.max_wet:
-    #         danger_list.append(self.name_exp)
-    #         message = 'Влажность палеонтологического экспоната "{0}" превысила норму! Нужно уведомить куратора'.format(
-    #             self.name_exp)
-    #     print(message)
 
     def input_info(self):
         try:
